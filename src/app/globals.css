@@ -1,26 +1,154 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Brand palette */
+  --color-navy: #0f172a; /* Primary — Deep Navy */
+  --color-navy-light: #1e293b;
+  --color-royal: #2563eb; /* Secondary — Royal Blue */
+  --color-royal-dark: #1d4ed8;
+  --color-accent: #f97316; /* Accent — Orange */
+  --color-accent-dark: #ea580c;
+  --color-mist: #f8fafc; /* Light gray background */
+  --color-ink: #1e293b; /* Body text — Dark Slate */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Typography */
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Shadows */
+  --shadow-soft: 0 4px 24px -6px rgb(15 23 42 / 0.08);
+  --shadow-lift: 0 20px 40px -12px rgb(15 23 42 / 0.18);
+  --shadow-glow: 0 8px 32px -8px rgb(249 115 22 / 0.45);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--color-royal);
+  color: #fff;
+}
+
+/* Glassmorphism surfaces */
+.glass {
+  background: rgb(255 255 255 / 0.72);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgb(255 255 255 / 0.35);
+}
+
+.glass-dark {
+  background: rgb(15 23 42 / 0.55);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid rgb(255 255 255 / 0.12);
+}
+
+/* Hero gradient wash over photography */
+.hero-gradient {
+  background: linear-gradient(
+    115deg,
+    rgb(15 23 42 / 0.95) 0%,
+    rgb(15 23 42 / 0.82) 42%,
+    rgb(15 23 42 / 0.3) 100%
+  );
+}
+
+/* Slow Ken-Burns drift for hero/section backgrounds */
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.02);
+  }
+  50% {
+    transform: translate3d(-1.5%, 1.5%, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.02);
+  }
+}
+
+.animate-drift {
+  animation: drift 26s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.animate-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.animate-scroll-pulse {
+  animation: scroll-pulse 1.8s ease-in-out infinite;
+}
+
+/* Trust-badge marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 36s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift,
+  .animate-float,
+  .animate-scroll-pulse,
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* Accessible focus ring (WCAG 2.2) */
+:focus-visible {
+  outline: 3px solid var(--color-royal);
+  outline-offset: 2px;
+  border-radius: 4px;
 }

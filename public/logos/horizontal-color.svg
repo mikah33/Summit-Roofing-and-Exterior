@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" fill="none">
+  <path d="M16 24 L32 8 L48 24 H40 L32 16 L24 24 Z" fill="#F97316"/>
+  <path d="M12 38 L32 18 L52 38 H43 L32 27 L21 38 Z" fill="#2563EB"/>
+  <path d="M6 54 L32 28 L58 54 H49 L32 37 L15 54 Z" fill="#0F172A"/>
+  <text x="70" y="36" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="1" fill="#0F172A">SUMMIT</text>
+  <text x="70" y="52" font-family="Poppins, Arial, sans-serif" font-weight="600" font-size="10.5" letter-spacing="4.5" fill="#2563EB">ROOFING &amp; EXTERIOR</text>
+</svg>
