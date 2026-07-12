@@ -9,114 +9,45 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     name: "Michael & Dana R.",
-    location: "Highlands Ranch, CO",
+    location: "Cranston, RI",
     service: "Roof Replacement",
     text: "From the first inspection to the final walkthrough, Summit was the most professional contractor we've ever hired. The crew finished our entire roof in one day and the yard was cleaner when they left than when they arrived.",
     initials: "MR",
   },
   {
     name: "Sarah K.",
-    location: "Aurora, CO",
+    location: "Warwick, RI",
     service: "Storm Damage & Insurance",
-    text: "After the June hailstorm, our insurance initially approved half of what the roof needed. Summit met the adjuster on our roof, documented everything, and the full replacement was approved. They handled it all — we just paid our deductible.",
+    text: "After a nor'easter tore up our roof, our insurance initially approved half of what it needed. Summit met the adjuster on our roof, documented everything, and the full replacement was approved. They handled it all — we just paid our deductible.",
     initials: "SK",
   },
   {
     name: "James T.",
-    location: "Lakewood, CO",
+    location: "Pawtucket, RI",
     service: "Roof Repair",
     text: "Two other companies told me I needed a full replacement. Summit's inspector showed me photos proving it was a flashing issue and fixed it for $700. That honesty earned them our siding project the next spring.",
     initials: "JT",
   },
   {
     name: "The Nguyen Family",
-    location: "Westminster, CO",
+    location: "East Providence, RI",
     service: "Siding Installation",
     text: "Our 1990s house looks brand new. The James Hardie siding, new trim, and color consultation completely transformed it — neighbors keep stopping to ask who did the work.",
     initials: "TN",
   },
   {
     name: "Robert & Ellen M.",
-    location: "Castle Rock, CO",
+    location: "Barrington, RI",
     service: "Deck Construction",
     text: "The 3D design process sold us. We revised the layout three times before building and the finished deck matched the renders exactly. Best money we've spent on this house.",
     initials: "RM",
   },
   {
     name: "Priya D.",
-    location: "Centennial, CO",
+    location: "North Kingstown, RI",
     service: "Roof Inspection",
     text: "I expected a sales pitch and got the opposite — a 21-point report showing my roof has 8-10 good years left, with two small maintenance items. When it IS time to replace, there's only one company I'm calling.",
     initials: "PD",
-  },
-];
-
-export type GalleryItem = {
-  title: string;
-  location: string;
-  category: "Roofing" | "Siding" | "Decks" | "Storm Restoration";
-  image: string;
-  before?: string;
-  after?: string;
-};
-
-const u = (id: string, w = 1200) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
-
-export const galleryItems: GalleryItem[] = [
-  {
-    title: "Architectural Shingle Replacement",
-    location: "Highlands Ranch",
-    category: "Roofing",
-    image: u("photo-1632759145351-1d592919f522"),
-  },
-  {
-    title: "Standing-Seam Metal Roof",
-    location: "Castle Rock",
-    category: "Roofing",
-    image: u("photo-1512917774080-9991f1c4c750"),
-  },
-  {
-    title: "Class 4 Impact-Resistant System",
-    location: "Parker",
-    category: "Roofing",
-    image: u("photo-1605152276897-4f618f831968"),
-  },
-  {
-    title: "Full Hail Restoration",
-    location: "Aurora",
-    category: "Storm Restoration",
-    image: u("photo-1561484930-998b6a7b22e8"),
-  },
-  {
-    title: "Wind Damage Rebuild",
-    location: "Thornton",
-    category: "Storm Restoration",
-    image: u("photo-1500382017468-9049fed747ef"),
-  },
-  {
-    title: "James Hardie Transformation",
-    location: "Westminster",
-    category: "Siding",
-    image: u("photo-1568605114967-8130f3a36994"),
-  },
-  {
-    title: "Modern Farmhouse Exterior",
-    location: "Broomfield",
-    category: "Siding",
-    image: u("photo-1600585154340-be6161a56a0c"),
-  },
-  {
-    title: "Two-Level Composite Deck",
-    location: "Littleton",
-    category: "Decks",
-    image: u("photo-1591825729269-caeb344f6df2"),
-  },
-  {
-    title: "Cedar Deck with Pergola",
-    location: "Centennial",
-    category: "Decks",
-    image: u("photo-1600210492486-724fe5c67fb0"),
   },
 ];
 
@@ -131,11 +62,7 @@ export const generalFaqs = [
   },
   {
     q: "What warranties do you offer?",
-    a: "Every installation carries our lifetime workmanship warranty for as long as you own your home, alongside manufacturer material warranties up to 50 years. Repairs carry a 2-year written guarantee.",
-  },
-  {
-    q: "Do you offer financing?",
-    a: "Yes — 0% same-as-cash plans and low fixed-rate terms up to 15 years, with approval decisions in minutes and no prepayment penalties.",
+    a: "Every installation carries two layers of protection: our own lifetime workmanship warranty covering the labor for as long as you own your home, stacked on top of a 30-year manufacturer shingle warranty covering materials. Repairs carry a 2-year written guarantee.",
   },
   {
     q: "How fast can you start my project?",
@@ -189,7 +116,7 @@ export const processSteps = [
   {
     step: 6,
     title: "Warranty",
-    body: "Your lifetime workmanship warranty and manufacturer coverage are registered and delivered — protection in writing, for decades.",
+    body: "Your lifetime workmanship warranty is registered on top of a 30-year manufacturer shingle warranty — both delivered in writing.",
     icon: "ShieldCheck",
   },
 ];
@@ -227,7 +154,7 @@ export const whyChooseUs = [
   },
   {
     title: "Lifetime Workmanship",
-    body: "Our installation warranty lasts as long as you own your home — and it's transferable once.",
+    body: "Our labor warranty lasts as long as you own your home, on top of a 30-year manufacturer shingle warranty — and it's transferable once.",
     icon: "Award",
   },
   {

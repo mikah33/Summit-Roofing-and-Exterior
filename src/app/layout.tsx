@@ -1,17 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
+import { CustomCursor } from "@/components/custom-cursor";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { ExitIntentPopup, StickyCTA } from "@/components/sticky-cta";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 import "./globals.css";
 
-const poppins = Poppins({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-poppins",
+  variable: "--font-space-grotesk",
 });
 
 const inter = Inter({
@@ -26,17 +28,18 @@ export const metadata: Metadata = {
     default: `${site.name} | Roofing, Siding & Decks in ${site.address.city}, ${site.address.state}`,
     template: `%s | ${site.name}`,
   },
-  description: `Premium roof replacement, roof repair, free inspections, storm damage restoration, insurance claim assistance, siding, and custom decks across the ${site.address.city} metro. Licensed, insured, lifetime workmanship warranty. Call ${site.phone}.`,
+  description: `Premium roof replacement, roof repair, free inspections, storm damage restoration, insurance claim assistance, siding, and custom decks across Rhode Island. Licensed, insured, lifetime workmanship warranty. Call ${site.phone}.`,
   keywords: [
     "roofing contractor",
     "roof replacement",
     "roof repair",
     "free roof inspection",
     "storm damage",
-    "hail damage",
+    "nor'easter damage",
     "insurance claims",
     "siding installation",
     "deck builder",
+    "roofing Rhode Island",
     `roofing ${site.address.city}`,
   ],
   openGraph: {
@@ -66,7 +69,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0F172A",
+  themeColor: "#0A0A0C",
 };
 
 const businessSchema = {
@@ -76,7 +79,6 @@ const businessSchema = {
   legalName: site.legalName,
   url: site.url,
   telephone: site.phone,
-  email: site.email,
   priceRange: "$$",
   image: `${site.url}/logos/horizontal-color.svg`,
   logo: `${site.url}/logos/icon-color.svg`,
@@ -104,7 +106,7 @@ const businessSchema = {
   ],
   areaServed: site.serviceAreas.map((city) => ({
     "@type": "City",
-    name: `${city}, CO`,
+    name: `${city}, ${site.address.state}`,
   })),
   aggregateRating: {
     "@type": "AggregateRating",
@@ -130,7 +132,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${inter.variable}`}
+      className={`${spaceGrotesk.variable} ${inter.variable}`}
       data-scroll-behavior="smooth"
     >
       <body>
@@ -146,6 +148,8 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <CustomCursor />
+        <ScrollProgress />
         <Header />
         <main id="main">{children}</main>
         <Footer />

@@ -8,8 +8,8 @@ import { services } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Service Areas — Roofing Across the Denver Metro & Front Range",
-  description: `Summit Roofing & Exterior serves ${site.serviceAreas.join(", ")} and surrounding Front Range communities with roofing, siding, storm restoration, and decks.`,
+  title: "Service Areas — Roofing Across Rhode Island",
+  description: `Summit Roofing & Exterior serves ${site.serviceAreas.join(", ")} and surrounding Rhode Island communities with roofing, siding, storm restoration, and decks.`,
   alternates: { canonical: "/service-areas" },
 };
 
@@ -18,8 +18,8 @@ export default function ServiceAreasPage() {
     <>
       <PageHero
         eyebrow="Service Areas"
-        title="Proudly Local Across the Front Range"
-        lead="Our crews live where they work. If you're within an hour of Denver, there's a Summit project — and a Summit customer — near you."
+        title="Proudly Local Across Rhode Island"
+        lead="Our crews live where they work. If you're anywhere in the Ocean State, there's a Summit project — and a Summit customer — near you."
         image="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=2400&q=80"
       />
 
@@ -45,7 +45,7 @@ export default function ServiceAreasPage() {
                   <span className="block font-heading font-bold text-navy">
                     {city}
                   </span>
-                  <span className="text-xs text-slate-500">Colorado</span>
+                  <span className="text-xs text-slate-500">Rhode Island</span>
                 </span>
               </Link>
             </StaggerItem>
@@ -67,7 +67,7 @@ export default function ServiceAreasPage() {
             <SectionHeading
               eyebrow="Full-Service, Everywhere We Go"
               title="Every Service, Every City"
-              lead="Whether you're in Aurora or Castle Rock, you get the same certified crews, the same warranty, and the same standard."
+              lead="Whether you're in Providence or South County, you get the same certified crews, the same warranty, and the same standard."
             />
           </FadeIn>
           <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -78,7 +78,7 @@ export default function ServiceAreasPage() {
                   className="block h-full rounded-2xl bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
                 >
                   <h3 className="font-heading font-bold text-navy">
-                    {s.name} in the Denver Metro
+                    {s.name} in Rhode Island
                   </h3>
                   <p className="mt-2 line-clamp-2 text-sm text-slate-600">
                     {s.excerpt}

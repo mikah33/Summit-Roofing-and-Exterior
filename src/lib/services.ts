@@ -24,16 +24,16 @@ export const services: Service[] = [
     shortName: "Replacement",
     icon: "Home",
     excerpt:
-      "Complete tear-off and replacement with premium architectural shingles, metal, or tile — backed by a lifetime workmanship warranty.",
+      "Complete tear-off and replacement with premium architectural shingles, metal, or tile — backed by our lifetime workmanship warranty on top of a 30-year shingle warranty.",
     heroImage: u("photo-1632759145351-1d592919f522"),
     cardImage: u("photo-1632759145351-1d592919f522", 900),
     headline: "A New Roof, Done Right the First Time",
     subheadline:
-      "Premium materials, factory-certified installers, and a lifetime workmanship warranty — most homes completed in a single day.",
+      "Premium materials, factory-certified installers, and a lifetime workmanship warranty on top of a 30-year shingle warranty — most homes completed in a single day.",
     description: [
       "Your roof is your home's first line of defense — and its single most visible feature. When repairs no longer make financial sense, Summit Roofing & Exterior delivers a full replacement engineered for decades of protection, not just the next storm season.",
       "We install premium architectural shingles, standing-seam metal, and designer tile systems from GAF, Owens Corning, and CertainTeed. Every project includes full tear-off, deck inspection, ice-and-water shield, synthetic underlayment, and upgraded ridge ventilation — the details budget contractors skip.",
-      "Because we're factory-certified by the manufacturers we install, your new roof qualifies for enhanced material warranties most contractors simply can't offer.",
+      "Because we're factory-certified by the manufacturers we install, your new roof qualifies for a 30-year shingle warranty on materials — on top of that, we back our own labor with a separate lifetime workmanship warranty most contractors simply can't offer.",
     ],
     features: [
       {
@@ -46,7 +46,7 @@ export const services: Service[] = [
       },
       {
         title: "Lifetime Workmanship Warranty",
-        body: "Our installation is warrantied for as long as you own your home, on top of manufacturer coverage up to 50 years.",
+        body: "Our installation labor is warrantied for as long as you own your home — stacked on top of a 30-year manufacturer shingle warranty on materials.",
       },
       {
         title: "Transparent, Fixed Pricing",
@@ -64,7 +64,7 @@ export const services: Service[] = [
       },
       {
         q: "What does a new roof cost?",
-        a: "Most asphalt replacements in our service area run between $9,000 and $25,000 depending on size, pitch, and material. We provide fixed, line-item estimates and 0% financing options.",
+        a: "Most asphalt replacements in our service area run between $9,000 and $25,000 depending on size, pitch, and material. We provide fixed, line-item estimates so you know the full cost upfront.",
       },
     ],
     cta: "Get a free, no-pressure replacement estimate",
@@ -127,8 +127,8 @@ export const services: Service[] = [
     icon: "Search",
     excerpt:
       "Free 21-point roof inspections with drone imagery and a written condition report — no obligation, no pressure.",
-    heroImage: u("photo-1504307651254-35680f356dfd"),
-    cardImage: u("photo-1504307651254-35680f356dfd", 900),
+    heroImage: u("photo-1635424709845-3a85ad5e1f5e"),
+    cardImage: u("photo-1635424709845-3a85ad5e1f5e", 900),
     headline: "Know Exactly What's Happening on Your Roof",
     subheadline:
       "A free 21-point inspection with drone imagery, photo documentation, and a straight answer about what your roof needs — even when that answer is 'nothing.'",
@@ -177,14 +177,14 @@ export const services: Service[] = [
     shortName: "Storm Damage",
     icon: "CloudLightning",
     excerpt:
-      "24/7 emergency response for hail and wind damage — tarping, documentation, and full restoration handled end to end.",
-    heroImage: u("photo-1561484930-998b6a7b22e8"),
-    cardImage: u("photo-1561484930-998b6a7b22e8", 900),
+      "24/7 emergency response for nor'easter, hurricane, and wind damage — tarping, documentation, and full restoration handled end to end.",
+    heroImage: u("photo-1761959166803-ed952543eeae"),
+    cardImage: u("photo-1761959166803-ed952543eeae", 900),
     headline: "After the Storm, We've Got You Covered",
     subheadline:
       "24/7 emergency tarping, thorough damage documentation, and complete restoration — we handle everything from first call to final shingle.",
     description: [
-      "Colorado hail doesn't negotiate. When wind and hail hit, the hours after matter: undocumented damage weakens insurance claims, and open roof penetrations turn into interior water damage fast.",
+      "New England doesn't negotiate. Nor'easters, coastal winds, and the occasional hurricane remnant hit Rhode Island roofs hard, and the hours after matter: undocumented damage weakens insurance claims, and open roof penetrations turn into interior water damage fast.",
       "Our storm response team provides 24/7 emergency tarping and board-up, then documents every impact point with drone imagery and test squares — the evidence insurance adjusters require.",
       "We're storm-restoration specialists, not storm chasers. We're local year-round, our license number is on every truck, and we'll still be here when your warranty needs us in year fifteen.",
     ],
@@ -203,13 +203,13 @@ export const services: Service[] = [
       },
       {
         title: "Local, Licensed, Year-Round",
-        body: "We've served the Front Range for 22 years. No out-of-state crews that vanish after the storm season.",
+        body: "We've served Rhode Island for 22 years. No out-of-state crews that vanish after the storm season.",
       },
     ],
     faqs: [
       {
-        q: "How do I know if my roof has hail damage?",
-        a: "From the ground, you often can't — hail bruises shingle mats in ways that only show up close. If your neighborhood was hit, get a free inspection. Damage left unclaimed past your carrier's filing deadline becomes your cost.",
+        q: "How do I know if my roof has storm or wind damage?",
+        a: "From the ground, you often can't — wind lift and hail bruise shingle mats in ways that only show up close. If your neighborhood took a hit from a nor'easter or high winds, get a free inspection. Damage left unclaimed past your carrier's filing deadline becomes your cost.",
       },
       {
         q: "What should I do immediately after a storm?",
@@ -280,8 +280,8 @@ export const services: Service[] = [
     icon: "Layers",
     excerpt:
       "James Hardie fiber cement, LP SmartSide, and premium vinyl — transform curb appeal and cut energy costs.",
-    heroImage: u("photo-1568605114967-8130f3a36994"),
-    cardImage: u("photo-1568605114967-8130f3a36994", 900),
+    heroImage: u("photo-1773101883541-42a4881daef3"),
+    cardImage: u("photo-1773101883541-42a4881daef3", 900),
     headline: "Siding That Transforms Your Entire Home",
     subheadline:
       "James Hardie fiber cement, LP SmartSide, and premium vinyl — installed by certified crews with whole-home insulation upgrades.",
@@ -311,7 +311,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Which siding material is best?",
-        a: "Fiber cement (James Hardie) offers the best durability and fire resistance for Colorado. LP SmartSide gives a warmer wood look at lower weight. Insulated vinyl is the value leader. We'll show you all three with real samples.",
+        a: "Fiber cement (James Hardie) offers the best durability against coastal humidity and salt air. LP SmartSide gives a warmer wood look at lower weight. Insulated vinyl is the value leader. We'll show you all three with real samples.",
       },
       {
         q: "How long does siding installation take?",
@@ -330,15 +330,15 @@ export const services: Service[] = [
     shortName: "Decks",
     icon: "Fence",
     excerpt:
-      "Custom composite and wood decks designed in 3D, engineered for Colorado weather, and built to be lived on.",
-    heroImage: u("photo-1591825729269-caeb344f6df2"),
-    cardImage: u("photo-1591825729269-caeb344f6df2", 900),
+      "Custom composite and wood decks designed in 3D, engineered for New England weather, and built to be lived on.",
+    heroImage: u("photo-1613544723412-b331bda01e87"),
+    cardImage: u("photo-1613544723412-b331bda01e87", 900),
     headline: "Outdoor Living, Built to Last Decades",
     subheadline:
       "Custom composite and cedar decks designed in 3D before we build — engineered footings, hidden fasteners, and railing systems that make the neighbors stare.",
     description: [
       "A great deck isn't lumber and screws — it's an outdoor room. Our design team builds your deck in 3D first, so you walk through the finished space before we set a single footing.",
-      "We build with Trex and TimberTech composite, and premium-grade cedar and redwood. Every structure is engineered for Colorado snow loads with properly-sized footings, flashing at the ledger (where most deck failures start), and hidden fastener systems.",
+      "We build with Trex and TimberTech composite, and premium-grade cedar and redwood. Every structure is engineered for New England snow loads with properly-sized footings, flashing at the ledger (where most deck failures start), and hidden fastener systems.",
       "Multi-level layouts, pergolas, privacy walls, built-in lighting, and cable or glass railing — designed around how your family actually uses the space.",
     ],
     features: [

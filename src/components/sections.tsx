@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, BadgeCheck, ShieldCheck, Star, ThumbsUp } from "lucide-react";
+import { BadgeCheck, Search, ShieldCheck, Star, ThumbsUp } from "lucide-react";
 import { AnimatedCounter } from "@/components/counter";
 import { Icon } from "@/components/icons";
 import { FadeIn, Stagger, StaggerItem } from "@/components/motion";
+import { ServiceShowcase } from "@/components/service-showcase";
+import { Spotlight } from "@/components/spotlight";
 import { CTAButton, PhoneButton, SectionHeading } from "@/components/ui";
 import { processSteps, whyChooseUs } from "@/lib/content";
-import { services } from "@/lib/services";
 import { site } from "@/lib/site";
 
 /* ---------------------------------- Trust bar ---------------------------------- */
@@ -16,7 +16,7 @@ export function TrustBar() {
     { value: site.stats.yearsExperience, suffix: "+", label: "Years of Experience" },
     { value: site.stats.projectsCompleted, suffix: "+", label: "Projects Completed" },
     { value: site.stats.fiveStarReviews, suffix: "+", label: "Five-Star Reviews" },
-    { value: site.stats.warrantyYears, suffix: "-Year", label: "Material Warranties" },
+    { value: site.stats.warrantyYears, suffix: "-Year", label: "Shingle Warranty" },
   ];
   const badges = [
     { icon: ShieldCheck, label: "Licensed & Insured" },
@@ -28,7 +28,11 @@ export function TrustBar() {
   return (
     <section aria-label="Why homeowners trust us" className="relative z-10 -mt-16 px-4 sm:px-6">
       <FadeIn className="mx-auto max-w-6xl">
-        <div className="glass rounded-3xl px-6 py-10 shadow-lift sm:px-10">
+        <div className="relative overflow-hidden rounded-3xl bg-white px-6 py-10 shadow-lift ring-1 ring-slate-900/5 sm:px-10">
+          <div
+            aria-hidden
+            className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-orange-400 to-royal"
+          />
           <dl className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
@@ -58,91 +62,87 @@ export function TrustBar() {
   );
 }
 
-/* -------------------------------- Services grid -------------------------------- */
+/* -------------------------------- Services showcase -------------------------------- */
 
 export function ServicesGrid({ heading = true }: { heading?: boolean }) {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6" id="services">
-      {heading && (
-        <FadeIn>
-          <SectionHeading
-            eyebrow="What We Do"
-            title="Complete Exterior Expertise, One Trusted Team"
-            lead="From the ridge of your roof to the boards of your deck — every service delivered by certified crews and backed in writing."
-          />
-        </FadeIn>
-      )}
-      <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((s) => (
-          <StaggerItem key={s.slug}>
-            <Link
-              href={`/services/${s.slug}`}
-              className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-slate-900/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-lift"
-            >
-              <div className="relative h-52 overflow-hidden">
-                <Image
-                  src={s.cardImage}
-                  alt={s.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
-                <span className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-white shadow-glow">
-                  <Icon name={s.icon} className="h-6 w-6" />
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-7">
-                <h3 className="font-heading text-xl font-bold text-navy transition-colors group-hover:text-royal">
-                  {s.name}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
-                  {s.excerpt}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 font-heading text-sm font-bold text-royal">
-                  Learn More
-                  <ArrowRight
-                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5"
-                    aria-hidden
-                  />
-                </span>
-              </div>
-            </Link>
-          </StaggerItem>
-        ))}
+    <section className="relative overflow-hidden bg-mist py-24" id="services">
+      {/* Blueprint grid texture */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#0A0A0C 1px, transparent 1px), linear-gradient(90deg, #0A0A0C 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+        {heading && (
+          <FadeIn>
+            <SectionHeading
+              eyebrow="What We Do"
+              title="Complete Exterior Expertise, One Trusted Team"
+              lead="From the ridge of your roof to the boards of your deck — every service delivered by certified crews and backed in writing. Browse the full lineup below."
+            />
+          </FadeIn>
+        )}
 
-        {/* CTA card completes the grid */}
-        <StaggerItem>
-          <div className="flex h-full flex-col justify-center rounded-3xl bg-navy p-8 text-white shadow-lift">
-            <p className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-accent">
-              Not sure what you need?
-            </p>
-            <h3 className="mt-3 font-heading text-2xl font-bold">
-              Start with a free inspection.
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-slate-300">
-              A certified inspector will tell you exactly what your home needs —
-              and what it doesn&rsquo;t. Written report, drone photos, zero pressure.
-            </p>
-            <div className="mt-6 flex flex-col gap-3">
+        <FadeIn className="mt-14">
+          <ServiceShowcase />
+        </FadeIn>
+
+        {/* Closing CTA banner */}
+        <FadeIn className="mt-8">
+          <div className="gradient-border flex flex-col items-center justify-between gap-6 rounded-[1.75rem] bg-navy px-8 py-8 text-center shadow-lift sm:flex-row sm:text-left">
+            <div className="flex items-center gap-4">
+              <span className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent text-white shadow-glow sm:flex">
+                <Search className="h-7 w-7" aria-hidden />
+              </span>
+              <div>
+                <p className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-accent">
+                  Not sure what you need?
+                </p>
+                <h3 className="mt-1 font-heading text-xl font-bold text-white">
+                  Start with a free inspection — we&rsquo;ll tell you straight.
+                </h3>
+              </div>
+            </div>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
               <CTAButton href="/contact" size="md">
                 Book Free Inspection
               </CTAButton>
               <PhoneButton size="md" />
             </div>
           </div>
-        </StaggerItem>
-      </Stagger>
+        </FadeIn>
+      </div>
     </section>
   );
 }
 
 /* --------------------------------- Why choose us -------------------------------- */
 
+// Bento spans for the first 7 tiles on lg screens; item index 7 (Emergency Service)
+// renders separately as the full-width closing strip below the grid.
+const bentoSpan = ["lg:col-span-2", "", "", "", "", "", ""];
+
 export function WhyChooseUs() {
+  const gridItems = whyChooseUs.slice(0, 7);
+  const closer = whyChooseUs[7];
+
   return (
-    <section className="relative overflow-hidden bg-navy py-24">
-      {/* floating geometry */}
+    <section className="bg-noise relative overflow-hidden bg-navy py-24">
+      {/* Blueprint grid texture */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+        }}
+      />
       <div
         aria-hidden
         className="pointer-events-none absolute -left-24 top-16 h-72 w-72 rounded-full bg-royal/15 blur-3xl"
@@ -160,23 +160,77 @@ export function WhyChooseUs() {
             lead="Anyone can nail down shingles. We built our reputation on everything that happens before, during, and decades after."
           />
         </FadeIn>
+
         <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {whyChooseUs.map((item) => (
-            <StaggerItem key={item.title}>
-              <div className="glass-dark group h-full rounded-3xl p-7 transition-all duration-500 hover:-translate-y-1.5 hover:bg-white/10">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-royal to-royal-dark text-white transition-transform duration-500 group-hover:scale-110">
-                  <Icon name={item.icon} className="h-6 w-6" />
-                </span>
-                <h3 className="mt-5 font-heading text-lg font-bold text-white">
-                  {item.title}
+          {gridItems.map((item, i) => {
+            const featured = i === 0;
+            return (
+              <StaggerItem key={item.title} className={bentoSpan[i]}>
+                <Spotlight
+                  color="rgba(212,169,84,0.3)"
+                  className={`group h-full overflow-hidden rounded-3xl p-7 transition-all duration-500 hover:-translate-y-1.5 ${
+                    featured
+                      ? "glass-dark bg-gradient-to-br from-royal/25 via-transparent to-transparent hover:bg-white/10 sm:p-9"
+                      : "glass-dark hover:bg-white/10"
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute right-5 top-5 font-heading text-xs font-bold tabular-nums text-white/25"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    className={`flex items-center justify-center rounded-2xl bg-gradient-to-br from-royal to-royal-dark text-white shadow-glow transition-transform duration-500 group-hover:scale-110 ${
+                      featured ? "h-16 w-16" : "h-12 w-12"
+                    }`}
+                  >
+                    <Icon name={item.icon} className={featured ? "h-8 w-8" : "h-6 w-6"} />
+                  </span>
+                  <h3
+                    className={`mt-5 font-heading font-bold text-white ${
+                      featured ? "text-2xl" : "text-lg"
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className={`mt-2 leading-relaxed text-slate-300 ${
+                      featured ? "max-w-sm text-base" : "text-sm"
+                    }`}
+                  >
+                    {item.body}
+                  </p>
+                </Spotlight>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+
+        {/* Closing strip — Emergency Service */}
+        <FadeIn className="mt-5">
+          <div className="flex flex-col items-center gap-5 rounded-3xl bg-gradient-to-r from-accent to-accent-dark px-8 py-7 text-center shadow-glow sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex items-center gap-4">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-white">
+                <Icon name={closer.icon} className="h-7 w-7" />
+              </span>
+              <div>
+                <h3 className="font-heading text-xl font-bold text-white">
+                  {closer.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                  {item.body}
+                <p className="mt-1 max-w-md text-sm leading-relaxed text-white/85">
+                  {closer.body}
                 </p>
               </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
+            </div>
+            <a
+              href={site.phoneHref}
+              className="shrink-0 rounded-full bg-white px-7 py-3.5 font-heading text-sm font-bold text-accent-dark shadow-lift transition-all duration-300 hover:-translate-y-0.5"
+            >
+              Call {site.phone}
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -184,10 +238,36 @@ export function WhyChooseUs() {
 
 /* ---------------------------------- Process ---------------------------------- */
 
+function ProcessCard({ step }: { step: (typeof processSteps)[number] }) {
+  return (
+    <Spotlight className="mx-auto w-full max-w-[15.5rem] overflow-hidden rounded-2xl bg-white p-5 text-center shadow-soft ring-1 ring-slate-900/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-lift">
+      <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-royal/10 text-royal">
+        <Icon name={step.icon} className="h-5 w-5" />
+      </span>
+      <h3 className="mt-3 font-heading text-sm font-bold text-navy">
+        <span className="sr-only">Step {step.step}: </span>
+        {step.title}
+      </h3>
+      <p className="mt-1.5 text-xs leading-relaxed text-slate-600 line-clamp-4">
+        {step.body}
+      </p>
+    </Spotlight>
+  );
+}
+
 export function ProcessSection() {
   return (
-    <section className="bg-mist py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section className="relative overflow-hidden bg-mist py-24">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#0A0A0C 1px, transparent 1px), linear-gradient(90deg, #0A0A0C 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <FadeIn>
           <SectionHeading
             eyebrow="How It Works"
@@ -195,30 +275,69 @@ export function ProcessSection() {
             lead="A clear six-step process with a named project manager and no surprises. Here's exactly what working with Summit looks like."
           />
         </FadeIn>
-        <Stagger className="mt-16 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {processSteps.map((step) => (
-            <StaggerItem key={step.step}>
-              <div className="relative h-full rounded-3xl bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift">
-                <span
-                  className="absolute -top-5 left-8 flex h-10 w-10 items-center justify-center rounded-full bg-accent font-heading text-sm font-extrabold text-white shadow-glow"
-                  aria-hidden
-                >
+
+        {/* Desktop: connected zigzag timeline */}
+        <div className="relative mt-20 hidden lg:block">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-[8.34%] top-[276px] h-0.5 bg-slate-300"
+          />
+          <div className="grid grid-cols-6">
+            {processSteps.map((step, i) => {
+              const above = i % 2 === 0;
+              return (
+                <FadeIn key={step.step} delay={i * 0.08} className="flex flex-col items-center">
+                  <div
+                    className={`flex h-56 w-full items-end justify-center pb-4 ${above ? "" : "invisible"}`}
+                  >
+                    {above && <ProcessCard step={step} />}
+                  </div>
+                  <div className={`h-6 w-px bg-slate-300 ${above ? "" : "invisible"}`} aria-hidden />
+                  <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-mist bg-navy font-heading text-sm font-extrabold text-white shadow-lift">
+                    {step.step}
+                  </div>
+                  <div className={`h-6 w-px bg-slate-300 ${above ? "invisible" : ""}`} aria-hidden />
+                  <div
+                    className={`flex h-56 w-full items-start justify-center pt-4 ${above ? "invisible" : ""}`}
+                  >
+                    {!above && <ProcessCard step={step} />}
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Mobile / tablet: vertical timeline */}
+        <div className="mt-14 space-y-8 lg:hidden">
+          {processSteps.map((step, i) => (
+            <FadeIn key={step.step} delay={i * 0.06}>
+              <div className="relative flex gap-5">
+                {i !== processSteps.length - 1 && (
+                  <span
+                    aria-hidden
+                    className="absolute left-[27px] top-14 h-[calc(100%+1.25rem)] w-px bg-slate-300"
+                  />
+                )}
+                <span className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy font-heading text-sm font-extrabold text-white shadow-lift">
                   {step.step}
                 </span>
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-royal/10 text-royal">
-                  <Icon name={step.icon} className="h-6 w-6" />
-                </span>
-                <h3 className="mt-5 font-heading text-lg font-bold text-navy">
-                  <span className="sr-only">Step {step.step}: </span>
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  {step.body}
-                </p>
+                <div className="flex-1 rounded-2xl bg-white p-5 shadow-soft ring-1 ring-slate-900/5">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-royal/10 text-royal">
+                    <Icon name={step.icon} className="h-4 w-4" />
+                  </span>
+                  <h3 className="mt-3 font-heading text-base font-bold text-navy">
+                    <span className="sr-only">Step {step.step}: </span>
+                    {step.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                    {step.body}
+                  </p>
+                </div>
               </div>
-            </StaggerItem>
+            </FadeIn>
           ))}
-        </Stagger>
+        </div>
       </div>
     </section>
   );
@@ -236,7 +355,7 @@ export function CTABanner({
   return (
     <section className="relative overflow-hidden py-24">
       <Image
-        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80"
+        src="/hero/cta-banner-aerial.jpg"
         alt=""
         fill
         sizes="100vw"
@@ -256,7 +375,7 @@ export function CTABanner({
           <PhoneButton />
         </div>
         <p className="mt-6 text-sm font-medium text-slate-300">
-          {site.emergency} · Licensed &amp; Insured · Lifetime Workmanship Warranty
+          {site.emergency} · Licensed &amp; Insured · Lifetime Workmanship Warranty on Top of a 30-Year Shingle Warranty
         </p>
       </FadeIn>
     </section>

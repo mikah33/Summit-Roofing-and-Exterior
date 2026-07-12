@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Award, HandHeart, Home, Mountain } from "lucide-react";
+import { Award, HandHeart, Home, Waves } from "lucide-react";
 import { AnimatedCounter } from "@/components/counter";
 import { FadeIn, Stagger, StaggerItem } from "@/components/motion";
 import { CTABanner, PageHero, ProcessSection } from "@/components/sections";
@@ -9,15 +9,15 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us — Local, Licensed & Family-Owned",
-  description: `Summit Roofing & Exterior has protected Front Range homes for ${site.stats.yearsExperience}+ years. Meet the family-owned team behind ${site.stats.projectsCompleted.toLocaleString()}+ completed projects.`,
+  description: `Summit Roofing & Exterior has protected Rhode Island homes for ${site.stats.yearsExperience}+ years. Meet the family-owned team behind ${site.stats.projectsCompleted.toLocaleString()}+ completed projects.`,
   alternates: { canonical: "/about" },
 };
 
 const values = [
   {
-    icon: Mountain,
-    title: "Built for Colorado",
-    body: "Hail, chinook winds, freeze-thaw cycles, and 300 days of UV — we engineer every roof for the specific climate that will attack it.",
+    icon: Waves,
+    title: "Built for New England",
+    body: "Nor'easters, coastal salt air, freeze-thaw winters, and humid summers — we engineer every roof for the specific climate that will attack it.",
   },
   {
     icon: HandHeart,
@@ -32,7 +32,7 @@ const values = [
   {
     icon: Home,
     title: "Neighbors, Not a Call Center",
-    body: "Our owners live in the communities we serve. When you call, a Summit employee in Colorado answers — not an answering service.",
+    body: "Our owners live in the communities we serve. When you call, a Summit employee in Rhode Island answers — not an answering service.",
   },
 ];
 
@@ -41,9 +41,9 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="Our Story"
-        title="Two Decades on Colorado Rooftops"
-        lead="Summit Roofing & Exterior is a family-owned, Colorado-grown company built on a simple idea: do exceptional work, tell the truth, and stand behind every nail."
-        image="https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&w=2400&q=80"
+        title="Two Decades on Rhode Island Rooftops"
+        lead="Summit Roofing & Exterior is a family-owned, Rhode Island-grown company built on a simple idea: do exceptional work, tell the truth, and stand behind every nail."
+        image="https://images.unsplash.com/photo-1654613698291-e5f7a9e3d71e?auto=format&fit=crop&w=2400&q=80"
       />
 
       {/* Story */}
@@ -53,13 +53,13 @@ export default function AboutPage() {
             <SectionHeading
               align="left"
               eyebrow="Who We Are"
-              title="From One Truck to the Front Range's Most Trusted Exterior Team"
+              title="From One Truck to Rhode Island's Most Trusted Exterior Team"
             />
             <div className="mt-6 space-y-5 leading-relaxed text-slate-600">
               <p>
                 Summit started in {2026 - site.stats.yearsExperience} with one
                 truck, one crew, and a founder who'd spent a decade watching
-                storm-chasing outfits blow through Colorado, do mediocre work,
+                storm-chasing outfits blow through New England, do mediocre work,
                 and disappear. He believed a roofing company could be different:
                 local, accountable, and honest enough to tell a homeowner when
                 their roof <em>didn&rsquo;t</em> need replacing.
@@ -89,7 +89,7 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="glass absolute -bottom-8 -left-4 rounded-3xl px-8 py-6 shadow-lift sm:-left-8">
+              <div className="absolute -bottom-8 -left-4 rounded-3xl bg-white px-8 py-6 shadow-lift ring-1 ring-slate-900/5 sm:-left-8">
                 <p className="font-heading text-4xl font-extrabold text-navy">
                   <AnimatedCounter value={site.stats.yearsExperience} suffix="+" />
                 </p>

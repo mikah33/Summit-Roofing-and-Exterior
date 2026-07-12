@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone, Star } from "lucide-react";
+import { MapPin, Phone, Star } from "lucide-react";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -26,7 +26,6 @@ const company = [
   { label: "About Us", href: "/about" },
   { label: "Project Gallery", href: "/gallery" },
   { label: "Customer Reviews", href: "/reviews" },
-  { label: "Financing Options", href: "/financing" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
@@ -34,7 +33,7 @@ const company = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-slate-300">
+    <footer className="bg-noise bg-navy text-slate-300">
       {/* Pre-footer CTA */}
       <div className="border-b border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-14 text-center lg:flex-row lg:justify-between lg:text-left">
@@ -68,8 +67,8 @@ export function Footer() {
         <div>
           <Logo color="white" />
           <p className="mt-5 text-sm leading-relaxed text-slate-400">
-            Premium roofing, siding, and outdoor living for the Colorado Front
-            Range. {site.stats.yearsExperience} years of craftsmanship, honesty,
+            Premium roofing, siding, and outdoor living for Rhode Island.{" "}
+            {site.stats.yearsExperience} years of craftsmanship, honesty,
             and roofs built to last.
           </p>
           <div className="mt-5 flex items-center gap-1 text-accent" aria-label="5 star rated">
@@ -138,22 +137,12 @@ export function Footer() {
           <ul className="mt-5 space-y-4 text-sm">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
-              <span>
-                {site.address.street}
-                <br />
-                {site.address.city}, {site.address.state} {site.address.zip}
-              </span>
+              <span>Serving all of Rhode Island</span>
             </li>
             <li>
               <a href={site.phoneHref} className="flex items-center gap-3 hover:text-accent">
                 <Phone className="h-4 w-4 shrink-0 text-accent" aria-hidden />
                 {site.phone}
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${site.email}`} className="flex items-center gap-3 hover:text-accent">
-                <Mail className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-                {site.email}
               </a>
             </li>
           </ul>

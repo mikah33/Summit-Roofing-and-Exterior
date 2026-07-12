@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions — Roofing, Warranties & Insurance",
   description:
-    "Honest answers to the questions homeowners ask most about roof replacement, repairs, inspections, insurance claims, financing, and warranties.",
+    "Honest answers to the questions homeowners ask most about roof replacement, repairs, inspections, insurance claims, and warranties.",
   alternates: { canonical: "/faq" },
 };
 
@@ -41,7 +41,7 @@ export default function FAQPage() {
       <PageHero
         eyebrow="FAQ"
         title="Straight Answers to Real Questions"
-        lead="No sales-speak, no dodging. If your question isn't here, call us — a human in Colorado will pick up."
+        lead="No sales-speak, no dodging. If your question isn't here, call us — a human in Rhode Island will pick up."
         image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2400&q=80"
       />
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapPin, Phone, Siren } from "lucide-react";
+import { Clock, MapPin, Phone, Siren } from "lucide-react";
 import { LeadForm } from "@/components/lead-form";
 import { FadeIn } from "@/components/motion";
 import { PageHero } from "@/components/sections";
@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us — Free Inspections & Estimates",
-  description: `Request a free roof inspection or estimate from Summit Roofing & Exterior. Call ${site.phone}, email, or send the form — we respond within one business hour.`,
+  description: `Request a free roof inspection or estimate from Summit Roofing & Exterior. Call ${site.phone} or send the form — we respond within one business hour.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -18,7 +18,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's Talk About Your Home"
         lead="Free inspections, honest estimates, and a team that answers the phone. Reach out however works for you."
-        image="https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&w=2400&q=80"
+        image="https://images.unsplash.com/photo-1602193458517-db6caca8f1fe?auto=format&fit=crop&w=2400&q=80"
       />
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
@@ -28,7 +28,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-navy">Get in Touch</h2>
             <p className="mt-3 leading-relaxed text-slate-600">
               Prefer to talk it through? Call us — a Summit employee in
-              Colorado answers, not a call center.
+              Rhode Island answers, not a call center.
             </p>
 
             <ul className="mt-8 space-y-5">
@@ -46,24 +46,6 @@ export default function ContactPage() {
                     </span>
                     <span className="font-heading text-lg font-bold text-navy group-hover:text-royal">
                       {site.phone}
-                    </span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="group flex items-center gap-4 rounded-2xl bg-mist p-5 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-lift"
-                >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-royal text-white">
-                    <Mail className="h-5 w-5" aria-hidden />
-                  </span>
-                  <span>
-                    <span className="block text-xs font-semibold uppercase tracking-widest text-slate-500">
-                      Email
-                    </span>
-                    <span className="font-heading text-lg font-bold text-navy group-hover:text-royal">
-                      {site.email}
                     </span>
                   </span>
                 </a>

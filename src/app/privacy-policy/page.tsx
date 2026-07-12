@@ -44,8 +44,8 @@ export default function PrivacyPolicyPage() {
       <h2>What We Don&rsquo;t Do</h2>
       <p>
         We do not sell your personal information. We share it only with service
-        providers who help us operate (scheduling, CRM, financing partners you
-        ask us to connect you with) and when required by law.
+        providers who help us operate (scheduling and CRM) and when required
+        by law.
       </p>
 
       <h2>Cookies &amp; Analytics</h2>
@@ -65,19 +65,16 @@ export default function PrivacyPolicyPage() {
       <h2>Your Rights</h2>
       <p>
         You may request access to, correction of, or deletion of your personal
-        information at any time by emailing{" "}
-        <a href={`mailto:${site.email}`} className="font-semibold text-royal">
-          {site.email}
-        </a>{" "}
-        or calling {site.phone}. Colorado residents have additional rights under
-        the Colorado Privacy Act, including opting out of targeted advertising.
+        information at any time by calling {site.phone}. Rhode Island
+        residents have additional rights under applicable state privacy law,
+        including opting out of targeted advertising.
       </p>
 
       <h2>Contact</h2>
       <p>
         Questions about this policy: {site.legalName}, {site.address.street},{" "}
         {site.address.city}, {site.address.state} {site.address.zip} ·{" "}
-        {site.phone} · {site.email}.
+        {site.phone}.
       </p>
     </LegalPage>
   );

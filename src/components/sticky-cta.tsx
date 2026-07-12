@@ -7,7 +7,7 @@ import { CalendarCheck, Phone, X } from "lucide-react";
 import { site } from "@/lib/site";
 import { LeadForm } from "@/components/lead-form";
 
-/** Desktop: floating "Get Estimate" pill. Mobile: full-width call/estimate bar. */
+/** Mobile-only: full-width call/estimate bar. */
 export function StickyCTA() {
   const [visible, setVisible] = useState(false);
 
@@ -21,46 +21,27 @@ export function StickyCTA() {
   return (
     <AnimatePresence>
       {visible && (
-        <>
-          {/* Desktop floating button */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 24 }}
-            className="fixed bottom-6 right-6 z-40 hidden lg:block"
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 60 }}
+          className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 lg:hidden"
+        >
+          <a
+            href={site.phoneHref}
+            className="flex items-center justify-center gap-2 bg-navy py-4 font-heading text-sm font-bold text-white"
           >
-            <Link
-              href="/contact"
-              className="flex items-center gap-2 rounded-full bg-accent px-6 py-4 font-heading text-sm font-bold text-white shadow-glow transition-all duration-300 hover:-translate-y-1 hover:bg-accent-dark"
-            >
-              <CalendarCheck className="h-4 w-4" aria-hidden />
-              Get Free Estimate
-            </Link>
-          </motion.div>
-
-          {/* Mobile bottom bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 60 }}
-            className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 lg:hidden"
+            <Phone className="h-4 w-4" aria-hidden />
+            Call Now
+          </a>
+          <Link
+            href="/contact"
+            className="flex items-center justify-center gap-2 bg-accent py-4 font-heading text-sm font-bold text-white"
           >
-            <a
-              href={site.phoneHref}
-              className="flex items-center justify-center gap-2 bg-navy py-4 font-heading text-sm font-bold text-white"
-            >
-              <Phone className="h-4 w-4" aria-hidden />
-              Call Now
-            </a>
-            <Link
-              href="/contact"
-              className="flex items-center justify-center gap-2 bg-accent py-4 font-heading text-sm font-bold text-white"
-            >
-              <CalendarCheck className="h-4 w-4" aria-hidden />
-              Free Estimate
-            </Link>
-          </motion.div>
-        </>
+            <CalendarCheck className="h-4 w-4" aria-hidden />
+            Free Estimate
+          </Link>
+        </motion.div>
       )}
     </AnimatePresence>
   );

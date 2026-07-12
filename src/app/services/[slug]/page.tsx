@@ -53,7 +53,7 @@ export default async function ServicePage({ params }: Props) {
       },
       areaServed: site.serviceAreas.map((c) => ({
         "@type": "City",
-        name: `${c}, CO`,
+        name: `${c}, ${site.address.state}`,
       })),
     },
     {
@@ -222,7 +222,7 @@ export default async function ServicePage({ params }: Props) {
             <SectionHeading
               eyebrow="Recent Work"
               title="Craftsmanship You Can See From the Curb"
-              lead="Browse completed Summit projects across the Front Range."
+              lead="Browse completed Summit projects across Rhode Island."
             />
           </FadeIn>
           <FadeIn className="mt-12 grid gap-6 sm:grid-cols-3">

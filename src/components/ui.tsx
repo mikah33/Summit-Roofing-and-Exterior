@@ -4,17 +4,17 @@ import { ArrowRight, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-heading font-semibold transition-all duration-300 focus-visible:outline-royal";
+  "inline-flex items-center justify-center gap-2 rounded-full font-heading font-semibold tracking-tight transition-all duration-300 focus-visible:outline-accent active:scale-[0.97]";
 
 const variants = {
   primary:
-    "bg-accent text-white shadow-glow hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lift",
+    "bg-gradient-to-r from-accent to-accent-dark text-white shadow-glow hover:-translate-y-0.5 hover:shadow-lift hover:brightness-110",
   secondary:
-    "bg-royal text-white hover:bg-royal-dark hover:-translate-y-0.5 hover:shadow-lift",
+    "bg-gradient-to-r from-royal to-royal-dark text-navy shadow-glow-gold hover:-translate-y-0.5 hover:shadow-lift hover:brightness-105",
   outline:
-    "border-2 border-white/70 text-white hover:bg-white hover:text-navy",
+    "border border-white/30 text-white backdrop-blur-sm hover:border-white hover:bg-white hover:text-navy",
   ghost:
-    "border-2 border-navy/15 text-navy hover:border-royal hover:text-royal",
+    "border border-navy/15 text-navy hover:border-royal hover:text-royal",
 };
 
 const sizes = {

@@ -8,7 +8,7 @@ import { testimonials } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews — 4.9 Stars Across the Front Range",
+  title: "Customer Reviews — 4.9 Stars Across Rhode Island",
   description: `Read what homeowners say about Summit Roofing & Exterior: ${site.stats.fiveStarReviews.toLocaleString()}+ five-star reviews for roofing, siding, storm restoration, and decks.`,
   alternates: { canonical: "/reviews" },
 };
@@ -62,7 +62,7 @@ export default function ReviewsPage() {
       {/* Rating summary */}
       <section className="relative z-10 -mt-14 px-4 sm:px-6">
         <FadeIn className="mx-auto max-w-4xl">
-          <div className="glass grid gap-8 rounded-3xl px-8 py-10 shadow-lift sm:grid-cols-3">
+          <div className="grid gap-8 rounded-3xl bg-white px-8 py-10 shadow-lift ring-1 ring-slate-900/5 sm:grid-cols-3">
             <div className="text-center">
               <p className="font-heading text-5xl font-extrabold text-navy">4.9</p>
               <div className="mt-2 flex justify-center">

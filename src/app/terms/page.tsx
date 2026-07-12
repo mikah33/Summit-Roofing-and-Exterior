@@ -72,7 +72,7 @@ export default function TermsPage() {
       <h2>Contact</h2>
       <p>
         {site.legalName}, {site.address.street}, {site.address.city},{" "}
-        {site.address.state} {site.address.zip} · {site.phone} · {site.email}.
+        {site.address.state} {site.address.zip} · {site.phone}.
       </p>
     </LegalPage>
   );
