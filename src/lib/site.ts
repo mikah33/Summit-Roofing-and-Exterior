@@ -2,7 +2,7 @@ export const site = {
   name: "Summit Roofing & Exterior",
   legalName: "Summit Roofing & Exterior LLC",
   tagline: "Roofing Built to Last",
-  url: "https://www.summitroofingexterior.com",
+  url: "https://summitroofing.work",
   phone: "(401) 585-8878",
   phoneHref: "tel:+14015858878",
   address: {
