@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `How ${site.name} collects, uses, and protects your personal information.`,
   alternates: { canonical: "/privacy-policy" },
-  robots: { index: false },
 };
 
 export default function PrivacyPolicyPage() {
@@ -54,6 +53,56 @@ export default function PrivacyPolicyPage() {
         functionality and aggregate analytics. You can disable cookies in your
         browser; core pages will continue to work.
       </p>
+
+      <h2>Advertising &amp; Remarketing</h2>
+      <p>
+        We use third-party advertising services&mdash;including Google Ads and
+        Meta (Facebook &amp; Instagram) Ads&mdash;to promote our services. These
+        partners place cookies and tracking pixels (such as the Google tag and
+        the Meta Pixel) on your device to measure ad performance and to show you
+        our ads on other websites and apps after you visit us (a practice known
+        as remarketing or retargeting).
+      </p>
+      <ul>
+        <li>
+          These partners may collect information such as your device
+          identifiers, IP address, pages viewed, and interactions with our ads.
+        </li>
+        <li>
+          We do not sell this information; it is used to deliver and measure
+          relevant advertising on our behalf.
+        </li>
+        <li>
+          Third-party vendors, including Google, show our ads on sites across
+          the internet and use cookies to serve ads based on your prior visits
+          to our website.
+        </li>
+      </ul>
+      <p>You can control or opt out of advertising cookies here:</p>
+      <ul>
+        <li>
+          Google Ads:{" "}
+          <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">
+            adssettings.google.com
+          </a>
+        </li>
+        <li>
+          Meta / Facebook:{" "}
+          <a href="https://www.facebook.com/settings?tab=ads" target="_blank" rel="noopener noreferrer">
+            facebook.com/settings?tab=ads
+          </a>
+        </li>
+        <li>
+          Industry opt-out tools:{" "}
+          <a href="https://optout.aboutads.info" target="_blank" rel="noopener noreferrer">
+            optout.aboutads.info
+          </a>{" "}
+          and{" "}
+          <a href="https://optout.networkadvertising.org" target="_blank" rel="noopener noreferrer">
+            optout.networkadvertising.org
+          </a>
+        </li>
+      </ul>
 
       <h2>Data Retention &amp; Security</h2>
       <p>
