@@ -56,11 +56,10 @@ export default function ContactPage() {
                 </span>
                 <span>
                   <span className="block text-xs font-semibold uppercase tracking-widest text-slate-500">
-                    Office
+                    Service Location
                   </span>
                   <span className="font-heading font-bold text-navy">
-                    {site.address.street}, {site.address.city},{" "}
-                    {site.address.state} {site.address.zip}
+                    All of Rhode Island
                   </span>
                 </span>
               </li>
