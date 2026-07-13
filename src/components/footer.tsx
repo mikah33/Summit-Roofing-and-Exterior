@@ -160,8 +160,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-slate-500 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {site.legalName}. All rights reserved. ·{" "}
-            {site.license}
+            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-white">
