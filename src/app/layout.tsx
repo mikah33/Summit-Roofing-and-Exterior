@@ -84,7 +84,7 @@ const businessSchema = {
   logo: `${site.url}/logos/icon-color.svg`,
   address: {
     "@type": "PostalAddress",
-    streetAddress: site.address.street,
+    ...(site.address.street ? { streetAddress: site.address.street } : {}),
     addressLocality: site.address.city,
     addressRegion: site.address.state,
     postalCode: site.address.zip,

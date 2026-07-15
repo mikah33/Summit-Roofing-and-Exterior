@@ -1,3 +1,5 @@
+import { towns } from "./towns";
+
 export const site = {
   name: "Summit Roofing & Exterior",
   legalName: "Summit Roofing & Exterior LLC",
@@ -6,10 +8,10 @@ export const site = {
   phone: "(401) 585-8878",
   phoneHref: "tel:+14015858878",
   address: {
-    street: "1200 Reservoir Avenue, Suite 4",
-    city: "Cranston",
+    street: "",
+    city: "Glocester",
     state: "RI",
-    zip: "02920",
+    zip: "02814",
   },
   hours: [
     { days: "Monday – Friday", time: "7:00 AM – 6:00 PM" },
@@ -29,22 +31,5 @@ export const site = {
     fiveStarReviews: 345,
     warrantyYears: 30,
   },
-  serviceAreas: [
-    "Providence",
-    "Cranston",
-    "Warwick",
-    "Pawtucket",
-    "East Providence",
-    "Woonsocket",
-    "Newport",
-    "Cumberland",
-    "Coventry",
-    "North Kingstown",
-    "South Kingstown",
-    "West Warwick",
-    "Johnston",
-    "Bristol",
-    "Middletown",
-    "Barrington",
-  ],
-} as const;
+  serviceAreas: towns.map((t) => t.name),
+};

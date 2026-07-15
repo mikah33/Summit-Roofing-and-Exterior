@@ -121,9 +121,14 @@ export default function PrivacyPolicyPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about this policy: {site.legalName}, {site.address.street},{" "}
-        {site.address.city}, {site.address.state} {site.address.zip} ·{" "}
-        {site.phone}.
+        {[
+          "Questions about this policy: " +
+            [site.legalName, site.address.street, site.address.city]
+              .filter(Boolean)
+              .join(", ") +
+            `, ${site.address.state} ${site.address.zip}`,
+          site.phone,
+        ].join(" · ") + "."}
       </p>
     </LegalPage>
   );

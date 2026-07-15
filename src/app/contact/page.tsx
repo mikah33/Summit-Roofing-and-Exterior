@@ -113,12 +113,14 @@ export default function ContactPage() {
       </section>
 
       {/* Map */}
-      <section aria-label="Office location map" className="px-4 pb-24 sm:px-6">
+      <section aria-label="Service area map" className="px-4 pb-24 sm:px-6">
         <FadeIn className="mx-auto max-w-7xl overflow-hidden rounded-3xl shadow-lift">
           <iframe
-            title={`Map to ${site.name} office in ${site.address.city}, ${site.address.state}`}
+            title={`Map of ${site.name} service area near ${site.address.city}, ${site.address.state}`}
             src={`https://www.google.com/maps?q=${encodeURIComponent(
-              `${site.address.street} ${site.address.city} ${site.address.state} ${site.address.zip}`,
+              [site.address.street, site.address.city, site.address.state, site.address.zip]
+                .filter(Boolean)
+                .join(" "),
             )}&output=embed`}
             className="h-[420px] w-full border-0"
             loading="lazy"
