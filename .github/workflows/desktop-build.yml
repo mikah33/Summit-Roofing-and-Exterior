@@ -6,6 +6,9 @@ on:
     tags:
       - "desktop-v*"
 
+permissions:
+  contents: write
+
 jobs:
   build-windows:
     runs-on: windows-latest
@@ -34,3 +37,17 @@ jobs:
           path: |
             desktop/dist/*.exe
           if-no-files-found: error
+
+      - name: Publish GitHub Release with download links
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: desktop-latest
+          name: Summit Roofing Desktop App (Windows)
+          body: |
+            Download and run on your Windows PC:
+
+            - **Summit-Roofing-Setup.exe** — installer (adds Start menu + desktop shortcut)
+            - **Summit-Roofing-Portable.exe** — no install, just double-click
+
+            On first launch Windows may show a SmartScreen warning (the app isn't code-signed) — click **More info → Run anyway**.
+          files: desktop/dist/*.exe

@@ -34,7 +34,8 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Summit Roofing"
+      "shortcutName": "Summit Roofing",
+      "artifactName": "Summit-Roofing-Setup.exe"
     },
     "portable": {
       "artifactName": "Summit-Roofing-Portable.exe"
