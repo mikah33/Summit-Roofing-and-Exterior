@@ -54,11 +54,9 @@ export default function Home() {
           </RevealUp>
           <FadeIn delay={0.55}>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-stone sm:text-xl">
-              Summit Roofing &amp; Exterior is the new name for Laramee
-              Construction &amp; Development. Premium roof replacement, storm
-              restoration, siding, and decks — installed by certified local
-              crews and backed by a lifetime workmanship warranty on top of a
-              30-year shingle warranty.
+              Premium roof replacement, storm restoration, siding, and decks —
+              installed by certified local crews and backed by a lifetime
+              workmanship warranty on top of a 30-year shingle warranty.
             </p>
           </FadeIn>
           <FadeIn delay={0.7}>
